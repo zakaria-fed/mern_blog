@@ -41,6 +41,24 @@ app.get("/article", (req, res) => {
 	});
 });
 
+app.post("/cms/edit", (req, res) => {
+	articles.updateOne(
+		{ id: req.body.id },
+		{ $set: { title: req.body.title, description: req.body.description } },
+		(err, data) => {
+			if (err) throw err;
+			res.status(201).send(data);
+		}
+	);
+});
+
+app.post("/cms/delete", (req, res) => {
+	articles.deleteOne({ id: req.body.id }, (err, data) => {
+		if (err) throw err;
+		res.status(201).send(data);
+	});
+});
+
 // DB Config
 mongoose.connect(connection);
 

@@ -1,0 +1,20 @@
+.dash__title::before {
+	content: "";
+	display: inline-block;
+	margin-right: 1rem;
+	width: 50px;
+	height: 4px;
+	border-radius: 8px;
+	background-color: #000;
+}
+
+.dash__para {
+	word-break: break-word;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	line-height: 17px; /* fallback */
+	max-height: 4rem; /* fallback */
+	-webkit-line-clamp: 4; /* number of lines to show */
+	-webkit-box-orient: vertical;
+}
