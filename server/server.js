@@ -59,6 +59,13 @@ app.post("/cms/delete", (req, res) => {
 	});
 });
 
+app.post("/cms/insert", (req, res) => {
+	articles.insertMany(req.body, (err, data) => {
+		if (err) throw err;
+		res.status(201).send(data);
+	});
+});
+
 // DB Config
 mongoose.connect(connection);
 

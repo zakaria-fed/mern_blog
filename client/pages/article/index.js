@@ -17,10 +17,12 @@ const Article = ({ data }) => {
 			</Head>
 
 			{/* Image */}
-			<img
-				src={data[0].img}
-				className="m-auto object-cover w-96 h-64 rounded"
-			/>
+			{data[0].img && (
+				<img
+					src={data[0].img}
+					className="m-auto object-cover w-96 h-64 rounded"
+				/>
+			)}
 
 			<div className="m-auto my-10 w-9/12 sm:w-3/6">
 				{/* Title */}
